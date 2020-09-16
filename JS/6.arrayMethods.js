@@ -12,16 +12,29 @@
 // Stwórz funkcje, które będą działać identycznie co metody wbudowane
 // ale będą działać przy pomocy pętli for lub while
 
-function mapFn(array, callback){}
+function mapFn(array, callback) {
+  array = [1, 2, 3, 4, 5, 6];
+  let newArr = [];
 
-function filterFn(array, callback){}
+  callback = el => el * 10;
 
-function reduceFn(array, callback, initial){}
+  for (let i = 0; i < array.length; i++) {
+    array[i] = callback(array[i]);
+    newArr.push(array[i]);
+  }
 
-function reduceRightFn(array, callback, initial){}
+  console.log(newArr);
+}
+mapFn();
 
-function everyFn(array, callback){}
+function filterFn(array, callback) {}
 
-function someFn(array, callback){}
+function reduceFn(array, callback, initial) {}
 
-function entriesFn(array){}
+function reduceRightFn(array, callback, initial) {}
+
+function everyFn(array, callback) {}
+
+function someFn(array, callback) {}
+
+function entriesFn(array) {}
