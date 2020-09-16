@@ -11,9 +11,39 @@ Stwórz .wall wg metodologii BEM z 3 modyfilatorami, aby utworzyć izometryczną
 - wszystkie klasy .wall mają działać wewnątrz elementu o klasie .cube
 */
 
-.cube{}
-.wall--top{}
-.wall--left{}
-.wall3--right{}
+.cube {
+  margin: 50px auto;
+  height: 500px;
+  position: relative;
+  width: 500px;
+  cursor: pointer;
+}
+
+.wall--top,
+.wall--left,
+.wall--right {
+  height: 250px;
+  position: absolute;
+  width: 250px;
+}
+
+.wall--top {
+  background: url("./img/img1.jpg") no-repeat center;
+  left: 0;
+  transform: skew(-45deg);
+}
+
+.wall--left {
+  background: url("./img/img2.jpg") no-repeat center;
+  top: 250px;
+  transform: skew(45deg);
+}
+
+.wall--right {
+  background: url("./img/img3.jpg") no-repeat center;
+  left: 250px;
+  top: 125px;
+  transform: skew(45deg, -45deg);
+}
 
 /* google keywords: css transformation, css skew, position absolute */

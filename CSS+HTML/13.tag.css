@@ -12,3 +12,57 @@ Stwórz klasę .tag, która:
 - przy onhover tag ma się obrócić o 180 stopni, zmieniać kolor tła na jaśniejszy o 10%
 - przy onhover tag ma NIE OBRACAĆ swojego tekstu razem z tłem, tylko go na chwilę schować, a potem pokazać jak w pełni tag się obróci
 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.tags {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 500px;
+  border: 1px solid #000;
+  margin: 10px;
+}
+
+@media all and (max-width: 342px) {
+  .tags {
+    justify-content: center;
+  }
+}
+
+.tag {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 10px 5px;
+  text-align: center;
+  transition: all 2s ease-in-out;
+  color: red;
+}
+
+span {
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+.tag:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid turquoise;
+  display: inline-block;
+
+}
+
+.tag:hover {
+    transform: rotateY(180deg);
+    filter: brightness(10);
+    color: transparent;
+}

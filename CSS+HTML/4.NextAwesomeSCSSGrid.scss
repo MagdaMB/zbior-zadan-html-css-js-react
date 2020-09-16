@@ -9,3 +9,65 @@
 // - col-* (od col-1 do col-10)
 // - col-sm-*, col-md-*, col-lg-*, col-xl-*
 // - Po napisaniu kodu SASS wygeneruj plik CSS
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .flex-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 150px;
+  }
+
+  @for $i from 1 through 10 {
+    .col-#{$i} {
+      border: 2px solid #000;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 20px;
+      margin: 10px;
+      padding: 10px;
+    }
+  }
+
+  @media all and (max-width: 576px) {
+    .col-sm {
+      background: red;
+      // width: 100%;
+    }
+  }
+
+  @media all and (min-width: 577px) and (max-width: 768px) {
+    .col-md {
+      background: pink;
+    }
+  }
+
+  @media all and (min-width: 767px) and (max-width: 992px) {
+    .col-lg {
+      background: yellow;
+    }
+  }
+
+  @media all and (min-width: 993px) {
+    .col-xl {
+      background: blue;
+    }
+  }
+
+
+
+  .col-1 {
+    flex-grow: 1;
+  }
+
+  .col-10 {
+    flex-grow: 10;
+  }
+}

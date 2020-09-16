@@ -5,9 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Menu i submenu</title>
-    <style>
-        /* tutaj style */
-    </style>
+        <link type="text/css" rel="stylesheet" href="./7.MenuWithSubmenu.css"/>
 </head>
 <body>
     <!-- treść zadania #7 -->
@@ -16,28 +14,33 @@
     <div id='menu__wrapper'>
         <a id="menu__toggler">On/Off</a>
         <ul id='menu'>
-            <li><a>MenuItem</a></li>
-            <li><a>MenuItem</a></li>
-            <li><a>MenuItem</a>
-                <ul>
-                    <li><a>SubMenuItem</a></li>
-                    <li><a>SubMenuItem</a></li>
-                    <li><a>SubMenuItem</a></li>
+            <li><a href="/">MenuItem</a></li>
+            <li><a href="/">MenuItem</a></li>
+            <li><a href="/">MenuItem</a>
+                <ul class="nested__list">
+                    <li><a href="/">SubMenuItem</a></li>
+                    <li><a href="/">SubMenuItem</a></li>
+                    <li><a href="/">SubMenuItem</a></li>
                 </ul>
             </li>
-            <li><a>MenuItem</a></li>
-            <li><a>MenuItem</a></li>
-            <li><a>MenuItem</a>
-                <ul>
-                    <li><a>SubMenuItem</a></li>
-                    <li><a>SubMenuItem</a></li>
+            <li><a href="/">MenuItem</a></li>
+            <li><a href="/">MenuItem</a></li>
+            <li><a href="/">MenuItem</a>
+                <ul class="nested__list">
+                    <li><a href="/">SubMenuItem</a></li>
+                    <li><a href="/">SubMenuItem</a></li>
                 </ul>
             </li>
-            <li><a>MenuItem</a></li>
+            <li><a href="/">MenuItem</a></li>
         </ul>
     </div>
     <script>
-        // tutaj skrypt
+        const buttonClick = document.getElementById("menu__toggler");
+        const menu = document.getElementById("menu");
+
+        buttonClick.addEventListener("click", function() {
+            menu.classList.toggle("show");
+        })
     </script>
 </body>
 
